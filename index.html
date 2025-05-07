@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Anniversary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      background: white;
+      border: 3px solid #f3c6d2;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 15px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    .heading {
+      font-family: 'Cursive', sans-serif;
+      font-size: 2em;
+      color: #d6336c;
+      margin-bottom: 5px;
+    }
+
+    .subtext {
+      font-size: 0.95em;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Love emoji animation */
+    .emoji {
+      position: absolute;
+      top: -2em;
+      font-size: 1.5em;
+      animation: fall linear infinite;
+      color: #ff4d6d;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .card {
+        padding: 40px 30px;
+      }
+
+      .heading {
+        font-size: 2.3em;
+      }
+
+      .subtext {
+        font-size: 1em;
+      }
+
+      .message {
+        font-size: 1.05em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Replace with your own photo -->
+    <img src="us.jpeg" alt="Anniversary Photo">
+
+    <div class="heading">Happy Anniversary Baby! 💕</div>
+
+    <div class="message">
+      <br>
+      Kepada cinta hatiku Puteri An Nisa ❤️. 
+      Terima kasih kerana sentiasa ada dengan I.
+      Sabar layan kerenah dan perangai I.
+      Tak pernah putus asa dengan I.
+      I doakan semoga kita dapat bersabar dengan segala ujian yang kita tengah tempuhi sekarang.
+      Dapat capai apa yang baby impikan dan berjaya di masa akan datang. 
+      I sayang sangat dekat baby ❤️. 
+      I can't wait to spend more time with you and create more memories with you
+      Semoga cinta kita kekal abadi dan terus mekar selamanya. I love you! ❤️ 
+    </div>
+  </div>
+
+  <script>
+    // Create love emoji rain
+    const card = document.querySelector('.card');
+    const createEmoji = () => {
+      const emoji = document.createElement('div');
+      emoji.classList.add('emoji');
+      emoji.textContent = '❤️';
+      emoji.style.left = Math.random() * card.offsetWidth + 'px';
+      emoji.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      card.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    };
+    
+    setInterval(createEmoji, 250);
+  </script>
+
+</body>
+</html>
